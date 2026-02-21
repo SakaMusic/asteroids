@@ -40,7 +40,7 @@ def main():
             for bullet in shots:
                 if roid.collides_with(bullet):
                     log_event("asteroid_shot")
-                    roid.kill()
+                    roid.split()
                     bullet.kill()
         for object in asteroids:
             if object.collides_with(player):
