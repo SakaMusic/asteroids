@@ -36,6 +36,12 @@ def main():
         dt = milliseconds / 1000
         screen.fill("black")
         updatable.update(dt)
+        for roid in asteroids:
+            for bullet in shots:
+                if roid.collides_with(bullet):
+                    log_event("asteroid_shot")
+                    roid.kill()
+                    bullet.kill()
         for object in asteroids:
             if object.collides_with(player):
                 log_event("player_hit")
